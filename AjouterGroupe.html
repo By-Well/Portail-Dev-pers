@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajouter groupe</title>
+<link href="Styles.css" rel="stylesheet" type="text/css">
+<script src="Portail.js"></script>
+</head>
+
+<body>
+<h1>créer un Groupe</h1>
+<p>*Les champs marqués d'une astérisque sont obligatoires</p>
+<blockquote>
+  <form method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <table border="0">
+      <tbody>
+        <tr>
+          <th align="right" scope="row">Nom du groupe *</th>
+          <td><input name="Nom du groupe" type="text" autofocus id="NomDuGroupe" autocomplete="off" size="50"></td>
+        </tr>
+        <tr>
+          <th height="70" align="right" valign="top" scope="row">Description/mission du groupe *</th>
+          <td><textarea name="Description/Mission" cols="48" rows="4" id="Mission"></textarea></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Responsable *</th>
+          <td><input name="Responsable" type="text" id="Responsable" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row"> Téléphone  </th>
+          <td><input name="Téléphone" type="text" id="Telephone" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Courriel *</th>
+          <td><input name="Adresse Courriel" type="email" id="Courriel" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Site web  </th>
+          <td><input name="Site Web" type="text" id="SiteWeb" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Fréquence des rencontres  </th>
+          <td><input name="Fréquence" type="text" id="Frequence" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">En service depuis l'an  </th>
+          <td><input name="En service" type="text" id="EnService" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Accueille les </th>
+          <td><input type="checkbox" name="Hommes" id="Hommes">
+            <label for="Hommes">Hommes </label>
+            <input name="Femmes" type="checkbox" id="Femmes">
+            <label for="Femmes">Femmes </label></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Ville des rencontres *</th>
+          <td><input name="Ville" type="text" id="Ville" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Nombre de membres *</th>
+          <td><input name="Nombre de membres" type="number" id="NombreMembres"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Nom du compte (votre adresse courriel) *</th>
+          <td><input name="Nom du compte" type="email" id="NomCompte" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Mot de passe (sensible aux majuscules) *</th>
+          <td><input name="Mot de passe" type="text" id="MotDePasse" size="50"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row"><label for="TypeParticipation">Type de participation monétaire *<br>
+                Ex: gratis, contribution volontaire, payant</label></th>
+          <td><input name="Type de participation" type="text" id="TypeParticipation" size="50"></td>
+        </tr>
+        <tr>
+          <th height="26" align="right" valign="top" scope="row">Photo du responsable  </th>
+          <td valign="top"><input type="file" name="Photo" id="Photo" accept="image/png, image/jpeg"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table border="1" id="Evenements">
+      <caption>
+      Inscrivez autant d'événements que désiré, par le bouton Ajouter une ligne. 
+      Chaque événement doit avoir une date et une heure. La description peut avoir autant de caractères que désiré
+      </caption>
+      <tbody>
+        <tr>
+          <th align="left" width="80" scope="col">Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Heure</th>
+        </tr>
+        <tr>
+          <td align="left"><input class="champ" name="event" type="text" id="event" size="80"></td>
+          <td><input class="champ" name="date" type="date" id="date"></td>
+          <td><input class="champ" name="heure" type="time" id="heure"></td>
+        </tr>
+        </tbody>
+    </table>
+        <input type="button" onclick="Javascript:ajouter_ligne()" value="Ajouter une ligne">
+        <input type="button" onclick="Javascript:supprimer_ligne()" value="supprimer une ligne">
+   <br> <br>
+   
+    <table width="600" border="0">
+      <tbody>
+        <tr>
+          <td width="162">Commentaires pour l'administrateur du portail: </td>
+          <td width="428"><textarea name="Commentaires" cols="67" rows="4" id="Commentaires"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <input name="submit" type="submit" id="submit" formmethod="POST" onClick="MM_validateForm('NomDuGroupe','','R','Responsable','','R','Courriel','','RisEmail','Ville','','R','NombreMembres','','RisNum','NomCompte','','RisEmail','MotDePasse','','R','TypeParticipation','','R','Mission','','R');return document.MM_returnValue">
+    </p>
+  </form>
+</blockquote>
+</body>
+</html>

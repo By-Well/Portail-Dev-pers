@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AccesPortail</title>
+<link href="Styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+</head>
+
+<body>
+<h2>Accès au portail: actions possibles</h2>
+<br><br>
+<form id="form1" name="form1" method="get" action="/Recherche">
+  1.   Chercher: (vous pouvez chercher sur plus d'un critère en séparant vos critères par une espace)
+  <ul>
+    <li>dans la mission d'un groupe</li>
+    <li>dans le nom d'un groupe</li>
+    <li>la ville d'un groupe</li>
+    <li>le nom d'un responsable de groupe </li>
+  </ul>
+  <p>      Vos critères de recherche:  
+    <input name="recherche" type="text" autofocus="autofocus" id="recherche" size="50">
+    <input name="submit" type="submit" id="submit" value=" Chercher">
+  </p>
+</form>
+<p>2.
+  <input name="button" type="button" id="button" onClick="MM_goToURL('parent','AjouterGroupe.html');return document.MM_returnValue" value="Créez votre groupe">
+</p>
+<p> 3
+  .
+  <input name="button2" type="button" id="button2" onClick="MM_goToURL('parent','MotDePasse.html');return document.MM_returnValue" value="Modifiez le contenu de votre groupe">
+</p>
+<h2>Il y a  
+  <!--#4DTEXT Session.storage.contexte.NbreTotalGroupes--> groupes inscrits pour un total de  
+    <!--#4DTEXT Session.storage.contexte.NbreTotalParticipants--> 
+  participants</h2>
+</body>
+</html>

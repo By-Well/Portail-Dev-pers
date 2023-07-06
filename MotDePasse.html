@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MotDePasse</title>
+<link href="Styles.css" rel="stylesheet" type="text/css">
+<script src="Portail.js"></script>
+</head>
+
+<body>
+<h2>Entrez votre identifiant et votre mot de passe</h2>
+<br>
+<br>
+<form method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <label for="username">Nom du compte:</label>
+  <br>
+  <input type="email" id="username" name="Nom du compte" size="40" autofocus>
+  <br>
+  <br>
+  <label for="pwd">Mot de passe (sensible à la casse):</label>
+  <br>
+  <input type="password" id="password" name="Mot de passe">
+  <br>
+  <br>
+  <input type="submit" value="Soumettre" id="submit" formmethod="POST" onClick="MM_validateForm('username','','RisEmail','password','','R');return document.MM_returnValue">
+</form>
+</body>
+</html>

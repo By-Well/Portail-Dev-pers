@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link href="Styles.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+    crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résultat de recherches</title>
+</head>
+
+<body>
+<div class="container-fluid"> 
+  <!--#4DEACH $vContact in vObRecherche-->
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td width="30%"><h2><strong>Nom du groupe</strong></h2></td>
+            <td width="70%"><h2><strong><!--#4DTEXT $vContact.NomDuGroupe--></strong></h2></td>
+          </tr>
+          <tr>
+            <td><strong>Responsable</strong></td>
+            <td align="left" valign="top"><!--#4DTEXT $vContact.Responsable--> 
+              <!--#4DIF taille image:C356 ($vContact.PhotoDuResponsable)#0--> 
+              <br>
+              <!--#4DTEXT $vContact.PhotoDuResponsable--> 
+              <!--#4DENDIF--></td>
+          </tr>
+          
+          <!--#4DIF $vContact.Telephone #"" -->
+          <tr>
+            <td><strong>Téléphone</strong></td>
+            <td><!--#4DTEXT $vContact.Telephone--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.Courriel #"" -->
+          <tr>
+            <td><strong>Courriel</strong></td>
+            <td><!--#4DTEXT $vContact.Courriel--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.SiteWeb #"" -->
+          <tr>
+            <td><strong>Site Web</strong></td>
+            <td><!--#4DTEXT $vContact.SiteWeb--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.ChampObjet.FréquenceRencontres #"" -->
+          <tr>
+            <td><strong>Fréquence des rencontres</strong></td>
+            <td><!--#4DTEXT $vContact.ChampObjet.FréquenceRencontres--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.VilleDesRencontres #"" -->
+          <tr>
+            <td><strong>Ville des rencontres</strong></td>
+            <td><!--#4DTEXT $vContact.VilleDesRencontres--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.NombreDeMembres #0 -->
+          <tr>
+            <td><strong>Nombre de membres</strong></td>
+            <td><!--#4DTEXT $vContact.NombreDeMembres--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.TypeParticipationMonetaire #"" -->
+          <tr>
+            <td><strong>Type de participation</strong></td>
+            <td><!--#4DTEXT $vContact.TypeParticipationMonetaire--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.HommesOuFemmes#"" -->
+          <tr>
+            <td><strong>Hommes et/ou femmes</strong></td>
+            <td><!--#4DTEXT $vContact.HommesOuFemmes--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DIF $vContact.MissionDuGroupe#"" -->
+          <tr>
+            <td height="21" valign="top"><strong>Mission du groupe</strong></td>
+            <td valign="top"><!--#4DTEXT $vContact.MissionDuGroupe--></td>
+          </tr>
+          <!--#4DENDIF--> 
+          
+          <!--#4DCode
+vObRechercheEvt:=ds.Evenements.query("ID_Contact=:1"; $vContact.ID).orderBy("DateEvenement")
+--> 
+          
+          <!--#4DEVAL $nbre:=vObRechercheEvt.length --> 
+          <!--#4DIF $nbre#0 -->
+          <tr>
+            <td><strong>Événements</strong></td>
+            <td><!--#4DIF $nbre>1 -->
+              
+              <ul>
+                <!--#4DENDIF--> 
+                
+                <!--#4DEACH $vEvent in vObRechercheEvt--> 
+                
+                <!--#4DIF $nbre>1-->
+                <li> 
+                  <!--#4DENDIF--> 
+                  
+                  <!--#4DTEXT $vEvent.NomEvenement--> le <!--#4DTEXT $vEvent.DateEvenement--> à 
+                  <!--#4DTEXT Chaine:C10(Heure:C179($vEvent.HeureEvenement);h mn)--> 
+                  
+                  <!--#4DIF $nbre>1--> 
+                </li>
+                <!--#4DENDIF--> 
+                
+                <!--#4DENDEACH--> 
+                
+                <!--#4DIF $nbre>1-->
+              </ul>
+              
+              <!--#4DENDIF--></td>
+          </tr>
+          <!--#4DENDIF-->
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6"> </div>
+  </div>
+  <!--#4DENDEACH--> 
+</div>
+</body>
+</html>

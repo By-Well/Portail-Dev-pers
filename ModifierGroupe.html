@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modifier groupe</title>
+<link href="Styles.css" rel="stylesheet" type="text/css">
+<script src="Portail.js"></script>
+</head>
+
+<body>
+<h1>Modifier un Groupe</h1>
+<p>*Les champs marqués d'une astérisque sont obligatoires</p>
+<blockquote>
+  <form method="post" enctype="multipart/form-data" name="form1" id="form1" action="ModifierGroupe">
+    <table border="0">
+      <tbody>
+        <tr>
+          <th align="right" scope="row">Statut de la fiche </th>
+          <td><!--#4DIF (vObRecherche[0].Inactive)-->
+            
+            <input name="Inactive" type="checkbox" id="Inactive">
+            
+            <!--#4DELSE--> 
+            <!-- Attention, logique inverse ici: lorsqu'active, cochée sinon non cochée -->
+            
+            <input name="Inactive" type="checkbox" id="Inactive" checked="checked">
+            
+            <!--#4DENDIF-->
+            
+            <label for="Inactive">Active</label></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Nom du groupe *</th>
+          <td><input name="Nom du groupe" type="text" autofocus id="NomDuGroupe" autocomplete="off" size="50" value="<!--#4DTEXT vObRecherche[0].NomDuGroupe-->"></td>
+        </tr>
+        <tr>
+          <th height="70" align="right" valign="top" scope="row">Description/mission du groupe *</th>
+          <td><textarea name="Description/Mission" cols="48" rows="4" id="Mission"><!--#4DTEXT vObRecherche[0].MissionDuGroupe--></textarea></td>
+        </tr>
+        <tr>
+          <th align="right" valign="top" scope="row">Responsable *</th>
+          <td><input name="Responsable" type="text" id="Responsable" size="50" value="<!--#4DTEXT vObRecherche[0].Responsable-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Téléphone  </th>
+          <td><input name="Téléphone" type="text" id="Telephone" size="50" value="<!--#4DTEXT vObRecherche[0].Telephone-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Courriel *</th>
+          <td><input name="Adresse Courriel" type="email" id="Courriel" size="50" value="<!--#4DTEXT vObRecherche[0].Courriel-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Site web  </th>
+          <td><input name="Site Web" type="text" id="SiteWeb" size="50" value="<!--#4DTEXT vObRecherche[0].SiteWeb-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Fréquence des rencontres  </th>
+          <td><input name="Fréquence" type="text" id="Frequence" size="50" value="<!--#4DTEXT vObRecherche[0].ChampObjet.FréquenceRencontres-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">En service depuis l'an  </th>
+          <td><input name="En service" type="text" id="EnService" size="50" value="<!--#4DTEXT vObRecherche[0].ChampObjet.EnServiceDepuis-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Accueille les </th>
+          <td><!--#4DIF (vObRecherche[0].ChampObjet.Hommes=1)-->
+            
+            <input type="checkbox" name="Hommes" id="Hommes" checked="checked">
+            
+            <!--#4DELSE-->
+            
+            <input type="checkbox" name="Hommes" id="Hommes">
+            
+            <!--#4DENDIF-->
+            
+            <label for="Hommes">Hommes </label>
+            
+            <!--#4DIF (vObRecherche[0].ChampObjet.Femmes=1)-->
+            
+            <input name="Femmes" type="checkbox" id="Femmes" checked="checked">
+            
+            <!--#4DELSE-->
+            
+            <input name="Femmes" type="checkbox" id="Femmes">
+            
+            <!--#4DENDIF-->
+            
+            <label for="Femmes">Femmes </label></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Ville des rencontres *</th>
+          <td><input name="Ville" type="text" id="Ville" size="50" value="<!--#4DTEXT vObRecherche[0].VilleDesRencontres-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Nombre de membres *</th>
+          <td><input name="Nombre de membres" type="number" id="NombreMembres" value="<!--#4DTEXT vObRecherche[0].NombreDeMembres-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Nom du compte (votre adresse courriel) *</th>
+          <td><input name="Nom du compte" type="email" id="NomCompte" size="50" value="<!--#4DTEXT vObRecherche[0].IdentifiantDuCompte-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row">Mot de passe (sensible aux majuscules) *</th>
+          <td><input name="Mot de passe" type="text" id="MotDePasse" size="50" value="<!--#4DTEXT vObRecherche[0].MotDePasse-->"></td>
+        </tr>
+        <tr>
+          <th align="right" scope="row"><label for="TypeParticipation">Type de participation monétaire *<br>
+                Ex: gratis, contribution volontaire, payant</label></th>
+          <td><input name="Type de participation" type="text" id="TypeParticipation" size="50" value="<!--#4DTEXT vObRecherche[0].TypeParticipationMonetaire-->"></td>
+        </tr>
+        <tr>
+          <th height="26" align="right" valign="top" scope="row">Photo du responsable  </th>
+          <td valign="top"><input type="file" name="Photo" id="Photo" accept="image/png, image/jpeg">
+            
+            <!--#4DIF taille image:C356 (vObRecherche[0].PhotoDuResponsable)#0--> 
+            <br>
+            
+            <!--#4DTEXT vObRecherche[0].PhotoDuResponsable--> 
+            <br>
+            <input name="SupprimerPhoto" type="checkbox" id="SupprimerPhoto">
+            <label for="SupprimerPhoto">Supprimer la photo</label>
+            
+            <!--#4DENDIF--></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="650" border="1" id="Evenements">
+      <caption>
+      Inscrivez autant d'événements que désiré, par le bouton Ajouter une ligne.
+      Chaque événement doit avoir une date et une heure. La description peut avoir autant de caractères que désiré
+      </caption>
+      <tbody>
+        <tr>
+          <th align="left" width="80" scope="col">Description</th>
+          <th width="10" scope="col">Date</th>
+          <th width="5" scope="col">Heure</th>
+        </tr>
+        
+        <!--#4DIF (vObRechercheEvt.length=0)-->
+        <tr>
+          <td align="left"><input class="champ" name="event" type="text" id="event" size="80"></td>
+          <td><input class="champ" name="date" type="date" id="date"></td>
+          <td><input class="champ" name="heure" type="time" id="heure"></td>
+        </tr>
+        <!--#4DELSE--> 
+        <!--#4DEACH $vEvent in vObRechercheEvt-->
+        <tr>
+          <td><input class="champ" name="event" type="text" id="event" size="80" value="<!--#4DTEXT $vEvent.NomEvenement-->"></td>
+          <td><input class="champ" name="date" type="date" id="date" size="10" value="<!--#4DTEXT $vEvent.DateEvenement-->"></td>
+          <td><input class="champ" name="heure" type="time" id="heure" size="5" value="<!--#4DEVAL Chaine:C10(heure:C179($vEvent.HeureEvenement);2)-->"></td>
+        </tr>
+        <!--#4DENDEACH--> 
+        <!--#4DENDIF-->
+      </tbody>
+    </table>
+    <input type="button" onclick="Javascript:ajouter_ligne()" value="Ajouter une ligne">
+    <input type="button"
+            onclick="Javascript:supprimer_ligne()" value="supprimer une ligne">
+    <br>
+    <br>
+    <table width="600" border="0">
+      <tbody>
+        <tr>
+          <td>Commentaires pour l'administrateur du portail: </td>
+          <td><textarea name="Commentaires" cols="67" rows="4" id="Commentaires" value="">
+        </textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  
+      <script>document.getElementById("Commentaires").innerHTML = "";</script><!-- ce code pour forcer le champ Commentaires à n'avoir rien dedans sinon
+8 espaces inexplicables s'insèrent au début du champ -->
+    <p>
+      <input name="submit" type="submit" id="submit" formmethod="POST" onClick="MM_validateForm('NomDuGroupe','','R','Responsable','','R','Ville','','R','MotDePasse','','R','TypeParticipation','','R','Mission','','R');return document.MM_returnValue">
+    </p>
+  </form>
+</blockquote>
+</body>
+</html>

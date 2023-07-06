@@ -1,0 +1,144 @@
+.index  {
+
+	font-size: 24px;
+
+	/*font-family: "Courier New", Courier, monospace*/
+
+	font-family: "PT Sans", Calibri !important;
+
+}
+
+/* Bleu (colonne gauche - fond) = vert R:0 V:153 B:142 = #00998e*/
+
+body  {
+
+	font-size: 13px;
+
+	font-family:  "PT Sans", Calibri !important;
+
+}
+
+h1     {
+
+	color: #006;
+
+	font-size: 24px;
+
+	font-family: "PT Sans", Calibri !important;
+
+	font-variant: small-caps;
+
+	background-color: #dcdcdc;
+
+	letter-spacing: -1px;
+
+}
+
+h2   {
+
+	color: #006;
+
+	font-size: 18px;
+
+	font-family: "PT Sans", Calibri !important;
+
+	background-color: #dcdcdc;
+
+	display: inline;
+
+	padding-left: 3px;
+
+	padding-right: 3px;
+
+}
+
+h3   {
+
+	color: #006;
+
+	font-size: 15px;
+
+	font-family: "PT Sans", Calibri !important;
+
+	background-color: #dcdcdc;
+
+	display: inline;
+
+	padding-left: 3px;
+
+	padding-right: 3px;
+
+}
+
+h4   {
+
+	color: #006;
+
+	font-size: 12px;
+
+	font-family: "PT Sans", Calibri !important;
+
+	background-color: #dcdcdc;
+
+	display: inline;
+
+	padding-right: 3px;
+
+	padding-left: 3px;
+
+}
+
+td  /*Style pour des cellules de tableaux*/{
+
+	font-size: 14px;
+
+	font-family: "PT Sans", Calibri !important;
+
+	padding-left: 3px;
+
+}
+
+.hilite  { font-weight: bolder; background-color: #ff9 }
+
+a:link /*"a" pour liens hypertexte*/{ color: blue; text-decoration: none; }
+
+a:visited /*"a" pour liens hypertexte*/{ color: fuchsia; text-decoration: none; }
+
+a:hover /*"a" pour liens hypertexte*/{ text-decoration: underline; }
+
+table {
+
+	border-collapse: collapse;
+
+}
+
+.imgReflow {
+
+	float: left;
+
+	margin-right: 10px;
+
+}
+
+.GrossePolice {
+
+	font-size: 24px;
+
+}
+
+.bleu {
+
+	font-weight: bold;
+
+	color: #00F;
+
+}
+
+.rouge {
+
+	font-weight: bold;
+
+	color: #F00;
+
+}
+
