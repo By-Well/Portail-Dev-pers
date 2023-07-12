@@ -18,6 +18,19 @@ body  {
 
 }
 
+#showcase{
+  background-image: url('./img1.jpg');
+  background-size: cover;
+  background-position:center;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:0 20px;
+}
+
+
 h1     {
 
 	color: #006;
