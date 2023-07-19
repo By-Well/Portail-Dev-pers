@@ -2,45 +2,43 @@
 <html>
   
 <head>
+  
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta charset="UTF-8">
-<title>AccesPortail</title>
-<link href="Styles.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">  
+<title>Portail Développement Personnel</title>  
+<link href="Styles.css" rel="stylesheet" type="text/css"> 
 <script type="text/javascript">
 function MM_goToURL() { //v3.0
   var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
   for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
 }
 </script>
+  
 </head>
 
 <body>
 <header id="showcase">
   <div class="logo">
-    <img src="logo.png" alt="logo">
+    <img src="IMG/logo.png" alt="logo">
   
   </div>
 
 </header> 
 
   <section id="section-a">
-  
-<h2>Accès au portail: actions possibles</h2>
+<br><br>  
+<h1>Libère ton potentiel !<br> Recherche ton groupe de développement personnel dès maintenant.</h1>
 <br><br>
-<form id="form1" name="form1" method="get" action="/Recherche">
-  1.   Chercher: (vous pouvez chercher sur plus d'un critère en séparant vos critères par une espace)
-  <ul>
-    <li>dans la mission d'un groupe</li>
-    <li>dans le nom d'un groupe</li>
-    <li>la ville d'un groupe</li>
-    <li>le nom d'un responsable de groupe </li>
-  </ul>
-  <p>      Vos critères de recherche:  
-    <input name="recherche" type="text" autofocus="autofocus" id="recherche" size="50">
-    <input name="submit" type="submit" id="submit" value=" Chercher">
-  </p>
-</form>
+
+  <div class="container">
+    <form  id="form1" name="form1" method="get"       action="/Recherche" class="search-bar">
+      <input  type="text" placeholder="Chercher un Groupe" name="recherche" autofocus="autofocus" id="recherche" size="50">
+      <button type="submit"><img src="IMG/search.png"></button>
+    </form>
+  </div>
+
+    
 <p>2.
   <input name="button" type="button" id="button" onClick="MM_goToURL('parent','AjouterGroupe.html');return document.MM_returnValue" value="Créez votre groupe">
 </p>

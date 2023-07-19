@@ -1,25 +1,34 @@
+
+
 .index  {
 
 	font-size: 24px;
 
 	/*font-family: "Courier New", Courier, monospace*/
 
-	font-family: "PT Sans", Calibri !important;
+	font-family: "Rockwell";
 
 }
-
+@font-face {
+  font-family:'RockWell';
+  src: url(Fonts/ROCK.TTF) format('truetype');
+  }
+@font-face {
+  font-family:'RockwellBold';
+  src: url(Fonts/Rockwell-Bold.ttf) format('truetype');
+  }
 /* Bleu (colonne gauche - fond) = vert R:0 V:153 B:142 = #00998e*/
 
 body  {
 
 	font-size: 13px;
 
-	font-family:  "PT Sans", Calibri !important;
+	font-family:  "Rockwell";
 
 }
 
 #showcase{
-  background-image: url('./img1.jpg');
+  background-image: url('IMG/img1.jpg');
   background-size: cover;
   background-position:center;
   height:100vh;
@@ -30,20 +39,63 @@ body  {
   padding:0 20px;
 }
 
+.container{
+      width: 100%;
+      min-height: 10vh;
+      padding: 5%;
+      align-items: center;
+      justify-content: center;
+
+  }
+.search-bar{
+      width: 100%;
+      max-width: 700px;
+      background: #DADBE2;
+      display: flex;
+      align-items: center;
+      border-radius: 60px;
+      padding: 10px 20px;
+}
+
+.search-bar input{
+      background: transparent;
+      flex: 1;
+      border: 0;
+      outline: none;
+      padding: 24px 20px;
+      font-size: 20px;
+      color: #0F0A34;
+}
+.search-bar button img{
+   width: 25px;
+}
+.search-bar button{
+  border: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background:  #0F0A34
+  cursor: pointer;
+}
 
 h1     {
 
-	color: #006;
+  text-align: center;
+  
+	color: #0F0A34;
 
-	font-size: 24px;
+	font-size: 26px;
 
-	font-family: "PT Sans", Calibri !important;
+	font-family: "Rockwell";
 
-	font-variant: small-caps;
+  font-weight: Bold;
 
 	background-color: #dcdcdc;
 
-	letter-spacing: -1px;
+  
+
+  
+}
 
 }
 
@@ -53,7 +105,9 @@ h2   {
 
 	font-size: 18px;
 
-	font-family: "PT Sans", Calibri !important;
+	font-family: "Rockwell";
+
+  font-weight: normal;
 
 	background-color: #dcdcdc;
 
@@ -71,7 +125,9 @@ h3   {
 
 	font-size: 15px;
 
-	font-family: "PT Sans", Calibri !important;
+	font-family: "Rockwell";
+
+  font-weight: normal;
 
 	background-color: #dcdcdc;
 
@@ -89,7 +145,9 @@ h4   {
 
 	font-size: 12px;
 
-	font-family: "PT Sans", Calibri !important;
+	font-family: "Rockwell";
+
+  font-weight: normal;
 
 	background-color: #dcdcdc;
 
@@ -105,7 +163,9 @@ td  /*Style pour des cellules de tableaux*/{
 
 	font-size: 14px;
 
-	font-family: "PT Sans", Calibri !important;
+	font-family: "Rockwell";
+
+  font-weight: normal;
 
 	padding-left: 3px;
 
